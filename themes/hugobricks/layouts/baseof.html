@@ -68,11 +68,13 @@
           </nav>
         </div>
         <div>
-		      {{- if (index .Site.Data .Language.Lang).webshop.show_cart_icon -}}
-          <a href="{{ (index .Site.Data .Language.Lang).webshop.cart_link }}">
-            <img src="/img/shopping-cart.svg" alt="Shopping cart icon" class="black_2_textDark" />
-            <span class="itemcount">0</span>
-          </a>
+          {{- if .Site.Data.settings.enable_cart -}}
+            {{- if (index .Site.Data .Language.Lang).webshop.show_cart_icon -}}
+            <a href="{{ (index .Site.Data .Language.Lang).webshop.cart_link }}">
+              <img src="/img/shopping-cart.svg" alt="Shopping cart icon" class="black_2_textDark" />
+              <span class="itemcount">0</span>
+            </a>
+            {{- end -}}
           {{- end -}}
           {{ if .Site.Data.settings.enable_search }}
           <a href="/search">
