@@ -3,9 +3,9 @@ theme: hugobricks
 defaultContentLanguage: en
 assetDir: static
 
-disableKinds:
-  - taxonomy
-  - term
+taxonomies:
+  tag: tags
+  category: categories
 
 markup:
   goldmark:
